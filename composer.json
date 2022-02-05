@@ -1,0 +1,81 @@
+{
+  "name": "kaiseki/wp-hook",
+  "type": "library",
+  "description": "Register classes with add_filter and add_action hooks",
+  "license": "MIT",
+  "homepage": "https://github.com/kaisekidev/kaiseki-wp-hook",
+  "authors": [
+    {
+      "name": "Kaiseki",
+      "email": "hello@kaiseki.dev",
+      "homepage": "https://www.kaiseki.dev",
+      "role": "Organization"
+    },
+    {
+      "name": "David Mondok",
+      "email": "david@woda.at",
+      "homepage": "https://github.com/davidmondok",
+      "role": "Developer"
+    },
+    {
+      "name": "Wolfgang Schaefer",
+      "email": "wolfgang@woda.at",
+      "homepage": "https://github.com/wolfgangschaefer",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/kaisekidev/kaiseki-wp-hook/issues",
+    "source": "https://github.com/kaisekidev/kaiseki-wp-hook"
+  },
+  "require": {
+    "php": "^7.4",
+    "psr/container": "^1.1",
+    "kaiseki/wp-config": "^1.0"
+  },
+  "require-dev": {
+    "bnf/phpstan-psr-container": "^1.0",
+    "eventjet/coding-standard": "^3.7",
+    "infection/infection": "^0.25.3",
+    "maglnet/composer-require-checker": "^3.5",
+    "phpstan/extension-installer": "^1.0",
+    "phpstan/phpstan": "^1.2",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpstan/phpstan-strict-rules": "^1.1",
+    "phpunit/phpunit": "^9.5",
+    "thecodingmachine/phpstan-safe-rule": "^1.1"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Kaiseki\\WordPress\\Hook\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kaiseki\\Test\\Functional\\WordPress\\Hook\\": "tests/functional",
+      "Kaiseki\\Test\\Unit\\WordPress\\Hook\\": "tests/unit"
+    }
+  },
+  "repositories": [],
+  "minimum-stability": "stable",
+  "scripts": {
+    "check": [
+      "@check-deps",
+      "@cs-check",
+      "@phpstan",
+      "@phpunit",
+      "@infection"
+    ],
+    "check-deps": "vendor/bin/composer-require-checker --config-file=require-checker.config.json",
+    "cs-check": "vendor/bin/phpcs",
+    "cs-fix": "vendor/bin/phpcbf",
+    "infection": "vendor/bin/infection",
+    "infection-xdebug": "@composer run infection -- --initial-tests-php-options='-d zend_extension=xdebug.so'",
+    "phpstan": "vendor/bin/phpstan analyse",
+    "phpstan-pro": "vendor/bin/phpstan analyse --pro",
+    "phpunit": "vendor/bin/phpunit"
+  }
+}
