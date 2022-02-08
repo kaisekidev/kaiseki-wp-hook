@@ -30,8 +30,8 @@
   },
   "require": {
     "php": "^7.4",
-    "psr/container": "^1.1",
-    "kaiseki/wp-config": "^1.0"
+    "kaiseki/wp-config": "^1.0",
+    "psr/container": "^1.1"
   },
   "require-dev": {
     "bnf/phpstan-psr-container": "^1.0",
