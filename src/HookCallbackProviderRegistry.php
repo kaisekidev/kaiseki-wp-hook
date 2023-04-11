@@ -14,10 +14,10 @@ final class HookCallbackProviderRegistry
         $this->provider = $provider;
     }
 
-    public function registerCallbacks(): void
+    public function registerHookCallbacks(): void
     {
         foreach ($this->provider as $current) {
-            $current->registerCallbacks();
+            $current->registerHookCallbacks();
         }
     }
 }

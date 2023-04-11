@@ -10,7 +10,7 @@ final class HookCallbackProviderStub implements HookCallbackProviderInterface
 {
     private bool $registerCallbacksCalled = false;
 
-    public function registerCallbacks(): void
+    public function registerHookCallbacks(): void
     {
         $this->registerCallbacksCalled = true;
     }
