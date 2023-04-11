@@ -29,14 +29,14 @@
     "source": "https://github.com/kaisekidev/kaiseki-wp-hook"
   },
   "require": {
-    "php": ">=7.4",
+    "php": "^8.1",
     "kaiseki/wp-config": "dev-dev",
     "psr/container": "^1.1"
   },
   "require-dev": {
     "bnf/phpstan-psr-container": "^1.0",
-    "eventjet/coding-standard": "^3.7",
     "infection/infection": "^0.25.3",
+    "kaiseki/php-coding-standard": "dev-master",
     "maglnet/composer-require-checker": "^3.5",
     "phpstan/extension-installer": "^1.0",
     "phpstan/phpstan": "^1.2",

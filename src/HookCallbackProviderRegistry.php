@@ -6,7 +6,9 @@ namespace Kaiseki\WordPress\Hook;
 
 final class HookCallbackProviderRegistry
 {
-    /** @var list<HookCallbackProviderInterface> */
+    /**
+     * @var list<HookCallbackProviderInterface>
+     */
     private array $provider;
 
     public function __construct(HookCallbackProviderInterface ...$provider)
