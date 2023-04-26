@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Kaiseki\WordPress\Hook;
 
+use function array_values;
+
 final class HookCallbackProviderRegistry
 {
     /**
@@ -13,7 +15,7 @@ final class HookCallbackProviderRegistry
 
     public function __construct(HookCallbackProviderInterface ...$provider)
     {
-        $this->provider = $provider;
+        $this->provider = array_values($provider);
     }
 
     public function registerHookCallbacks(): void

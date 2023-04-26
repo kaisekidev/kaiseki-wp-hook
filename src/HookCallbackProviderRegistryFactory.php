@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kaiseki\WordPress\Hook;
 
-use Kaiseki\WordPress\Config\Config;
+use Kaiseki\Config\Config;
 use Psr\Container\ContainerInterface;
 
 final class HookCallbackProviderRegistryFactory

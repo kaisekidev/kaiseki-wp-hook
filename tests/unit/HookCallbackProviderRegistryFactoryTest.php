@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Kaiseki\Test\Unit\WordPress\Hook;
 
+use Kaiseki\Config\ConfigInterface;
+use Kaiseki\Config\NestedArrayConfig;
 use Kaiseki\Test\Unit\WordPress\Hook\TestDouble\FakeContainer;
 use Kaiseki\Test\Unit\WordPress\Hook\TestDouble\HookCallbackProviderStub;
-use Kaiseki\WordPress\Config\ConfigInterface;
-use Kaiseki\WordPress\Config\NestedArrayConfig;
 use Kaiseki\WordPress\Hook\HookCallbackProviderRegistryFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -39,7 +39,7 @@ final class HookCallbackProviderRegistryFactoryTest extends TestCase
         ];
         $container = new FakeContainer($config);
 
-        ($this->factory)($container)->registerCallbacks();
+        ($this->factory)($container)->registerHookCallbacks();
 
         self::assertTrue($provider->isRegisterCallbacksCalled());
     }
