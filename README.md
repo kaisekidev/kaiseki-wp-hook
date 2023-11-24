@@ -17,10 +17,10 @@ final class DoSomething implements \Kaiseki\WordPress\Hook\HookCallbackProviderI
 {
     public function registerCallbacks(): void
     {
-        \add_action('after_setup_theme', [$this, 'doSomething'], 10, 1);
+        \add_action('after_setup_theme', [$this, 'doSomething'], 10, 0);
     }
 
-    public function doSomething(): string { /*...*/ }
+    public function doSomething(): void { /*...*/ }
 }
 ```
 
