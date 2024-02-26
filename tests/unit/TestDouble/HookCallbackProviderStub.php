@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Kaiseki\Test\Unit\WordPress\Hook\TestDouble;
 
-use Kaiseki\WordPress\Hook\HookCallbackProviderInterface;
+use Kaiseki\WordPress\Hook\HookProviderInterface;
 
-final class HookCallbackProviderStub implements HookCallbackProviderInterface
+final class HookCallbackProviderStub implements HookProviderInterface
 {
     private bool $registerCallbacksCalled = false;
 
-    public function registerHookCallbacks(): void
+    public function addHooks(): void
     {
         $this->registerCallbacksCalled = true;
     }

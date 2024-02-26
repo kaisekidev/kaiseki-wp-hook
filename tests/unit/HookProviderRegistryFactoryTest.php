@@ -4,42 +4,37 @@ declare(strict_types=1);
 
 namespace Kaiseki\Test\Unit\WordPress\Hook;
 
-use Kaiseki\Config\ConfigInterface;
-use Kaiseki\Config\NestedArrayConfig;
 use Kaiseki\Test\Unit\WordPress\Hook\TestDouble\FakeContainer;
 use Kaiseki\Test\Unit\WordPress\Hook\TestDouble\HookCallbackProviderStub;
-use Kaiseki\WordPress\Hook\HookCallbackProviderRegistryFactory;
+use Kaiseki\WordPress\Hook\HookProviderRegistryFactory;
 use PHPUnit\Framework\TestCase;
 
-final class HookCallbackProviderRegistryFactoryTest extends TestCase
+final class HookProviderRegistryFactoryTest extends TestCase
 {
-    private HookCallbackProviderRegistryFactory $factory;
+    private HookProviderRegistryFactory $factory;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->factory = new HookCallbackProviderRegistryFactory();
+        $this->factory = new HookProviderRegistryFactory();
     }
 
     public function testCreateInstance(): void
     {
         $provider = new HookCallbackProviderStub();
-        $configInstance = new NestedArrayConfig(
-            [
+        $config = [
+            HookCallbackProviderStub::class => $provider,
+            'config' => [
                 'hook' => [
                     'provider' => [
                         HookCallbackProviderStub::class,
                     ],
                 ],
-            ]
-        );
-        $config = [
-            HookCallbackProviderStub::class => $provider,
-            ConfigInterface::class => $configInstance,
+            ],
         ];
         $container = new FakeContainer($config);
 
-        ($this->factory)($container)->registerHookCallbacks();
+        ($this->factory)($container)->addHooks();
 
         self::assertTrue($provider->isRegisterCallbacksCalled());
     }

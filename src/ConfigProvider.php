@@ -12,13 +12,13 @@ final class ConfigProvider
     public function __invoke(): array
     {
         return [
-            'dependencies' => [
-                'factories' => [
-                    HookCallbackProviderRegistry::class => HookCallbackProviderRegistryFactory::class,
-                ],
-            ],
             'hook' => [
                 'provider' => [],
+            ],
+            'dependencies' => [
+                'factories' => [
+                    HookProviderRegistry::class => HookProviderRegistryFactory::class,
+                ],
             ],
         ];
     }

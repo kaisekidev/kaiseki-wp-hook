@@ -10,10 +10,10 @@ composer require kaiseki/wp-hook
 
 ## Usage
 
-* Implement a class with the `HookCallbackProviderInterface`, e.g.:
+* Implement a class with the `HookProviderInterface`, e.g.:
 
 ```php
-final class DoSomething implements \Kaiseki\WordPress\Hook\HookCallbackProviderInterface
+final class DoSomething implements \Kaiseki\WordPress\Hook\HookProviderInterface
 {
     public function registerCallbacks(): void
     {
@@ -36,4 +36,4 @@ return [
 ];
 ```
 
-* Classes registered on this key will be called by using `HookCallbackProviderRegistry` and calling `registerCallbacks`
+* Classes registered on this key will be called by using `HookProviderRegistry` and calling `registerCallbacks`
