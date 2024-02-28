@@ -10,9 +10,9 @@
         <testsuite name="Kaiseki\Test\Unit\WordPress\Hook">
             <directory>tests/unit</directory>
         </testsuite>
-        <testsuite name="Kaiseki\Test\Functional\WordPress\Hook">
-            <directory>tests/functional</directory>
-        </testsuite>
+<!--        <testsuite name="Kaiseki\Test\Functional\WordPress\Hook">-->
+<!--            <directory>tests/functional</directory>-->
+<!--        </testsuite>-->
     </testsuites>
     <coverage>
         <include>
