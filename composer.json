@@ -53,7 +53,6 @@
     "sort-packages": true,
     "allow-plugins": {
       "phpstan/extension-installer": true,
-      "infection/extension-installer": false,
       "roots/wordpress-core-installer": true
     }
   },
